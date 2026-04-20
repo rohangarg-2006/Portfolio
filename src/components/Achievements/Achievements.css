@@ -1,0 +1,53 @@
+.main-achieve {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.ach {
+    font-size: 3.0rem;
+    color: #0d47a1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.list-ach {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.list-ach div {
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #e3f2fd;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.ten, .twe, .jee, .codecon{
+    font-size: 1.2rem;
+}
+.list-ach div:hover {
+    background-color: #bbdefb;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .main-achieve {
+        padding: 1rem;
+    }
+    
+    .ach {
+        font-size: 2rem;
+    }
+    
+    .list-ach div {
+        font-size: 1rem;
+        padding: 0.8rem; 
+    }
+}

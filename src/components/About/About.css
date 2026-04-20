@@ -1,0 +1,81 @@
+.introduction-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.introduction {
+    flex: 2;
+    text-align: left;
+    padding-right: 1.5rem;
+}
+
+.hello- {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.8rem;
+}
+
+.name_ro {
+    font-size: 3.0rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.intro-name {
+    color: yellow;
+}
+
+.edu, .branch {
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.col, .bran {
+    color:  yellow;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.do {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.874);
+    max-width: 90%;
+}
+
+.Rohan_image {
+    flex: 1;
+    width: 250px;
+    height: auto;
+    border: 2px solid yellow;
+    object-fit: cover;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-top: 80px;
+}
+
+
+.Rohan_image:hover {
+    transform: scale(1.03);
+}
+
+
+@media (max-width: 768px) {
+    .introduction-container {
+        flex-direction: column;
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    .Rohan_image {
+        width: 200px;
+        margin-top: 1.5rem;
+    }
+}

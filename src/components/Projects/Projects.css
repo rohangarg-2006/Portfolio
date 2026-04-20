@@ -1,0 +1,144 @@
+.ML_main_project{
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+
+.machinelr {
+    font-size: 3.0rem;
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.short-desc {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-weight: bold;
+}
+.desc-project-ml{
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.link-ml {
+    font-size: 1.1rem;
+    color: #474646;
+    margin-bottom: 0.5rem;
+    font-weight: lighter;
+}
+
+
+.ProjectML {
+    font-size: 1.3rem;
+    color: #1884ff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ProjectML:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}
+.code-pract {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-weight: bold;
+}
+.platforms {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.platforms div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.platforms img {
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.platforms p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.platforms div:hover {
+    transform: translateY(-5px);
+}
+
+.platforms img:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .platforms {
+        gap: 1.5rem;
+    }
+
+    .platforms div {
+        width: 100px;
+    }
+
+    .platforms img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .platforms p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    div {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .machinelr {
+        font-size: 1.5rem;
+    }
+
+    .short {
+        font-size: 1rem;
+    }
+
+    .link {
+        font-size: 0.9rem;
+    }
+}
