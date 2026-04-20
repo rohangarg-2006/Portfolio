@@ -11,7 +11,7 @@ const Connect = () => {
     const [alert, setAlert] = useState({ show: false, message: '', type: '' });
 
     useEffect(() => {
-        emailjs.init('jK17NLdpNM50XbRQx');
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     }, []);
 
     const showAlert = (message, type) => {
@@ -23,7 +23,12 @@ const Connect = () => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_v4wmpi9', 'template_d08bb88', form.current, 'jK17NLdpNM50XbRQx')
+            .sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
             .then(
             (response) => {
                 console.log('SUCCESS!', response);
