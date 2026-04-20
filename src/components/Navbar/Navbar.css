@@ -1,82 +1,238 @@
 .nav_bar {
     display: flex;
     align-items: center;
-    padding: 15px 30px;
-    background-color: rgb(35, 35, 35);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(15, 15, 18, 0.95), rgba(26, 26, 46, 0.95));
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(97, 218, 251, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(97, 218, 251, 0.2);
 }
 
 .nav_bar:hover {
-    background-color: #1c1f24;
+    box-shadow: 0 12px 40px rgba(97, 218, 251, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    padding: 16px 40px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo-section:hover {
+    transform: scale(1.05);
 }
 
 .rimage {
-    width: 70px;
-    height: auto;
-    transition: transform 0.3s ease;
-    margin-right: 250px;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(97, 218, 251, 0.3));
 }
 
 .rimage:hover {
-    transform: scale(1.1);
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #61dafb, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+}
+
+.logo-section:hover .brand-name {
+    letter-spacing: 0.5px;
 }
 
 .links {
-    cursor: pointer;
     display: flex;
-    gap: 40px;
+    gap: 8px;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .shortcuts {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
-    padding: 5px 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
     position: relative;
     white-space: nowrap;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.shortcuts::before {
+.nav-icon {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.shortcuts:before {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #61dafb;
+    background: linear-gradient(90deg, #61dafb, #ffd700);
     transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
 .shortcuts:hover {
-    color: yellow;
-    transform: translateY(-3px);
+    color: #61dafb;
+    transform: translateY(-2px);
+    background: rgba(97, 218, 251, 0.08);
 }
 
-.shortcuts:hover::before {
+.shortcuts:hover .nav-icon {
+    transform: scale(1.2);
+}
+
+.shortcuts:hover:before {
     width: 100%;
 }
 
 .active {
     color: #61dafb;
-    font-weight: bold;
+    font-weight: 700;
+    background: rgba(97, 218, 251, 0.12);
+    box-shadow: 0 4px 12px rgba(97, 218, 251, 0.2);
 }
 
-@media (max-width: 768px) {
-    .nav_bar {
-        padding: 10px 20px;
-        flex-direction: column;
+.active:before {
+    width: 100%;
+}
+
+.active .nav-icon {
+    transform: scale(1.2);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #61dafb, #ffd700);
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-left: 8px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(97, 218, 251, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(97, 218, 251, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:before {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .navbar-container {
+        padding: 14px 30px;
+    }
+
+    .shortcuts {
+        padding: 9px 14px;
+        font-size: 0.9rem;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        padding: 12px 20px;
+    }
+
+    .logo-section {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
     .links {
-        flex-direction: column;
-        gap: 15px;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .shortcuts {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        flex: 1;
+        justify-content: center;
+        min-width: fit-content;
+    }
+
+    .cta-button {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar-container {
+        padding: 10px 15px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+        display: none;
+    }
+
+    .rimage {
+        width: 40px;
+        height: 40px;
+    }
+
+    .links {
+        gap: 4px;
+    }
+
+    .shortcuts {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .shortcuts .nav-icon {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        display: none;
     }
 }

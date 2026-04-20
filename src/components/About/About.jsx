@@ -4,19 +4,67 @@ import './About.css'
 import { Element } from 'react-scroll'
 
 const About = () => {
+  const stats = [
+    { label: 'Projects', value: '7+' },
+    { label: 'Experience', value: '2+ yrs' },
+    { label: 'CGPA', value: '8.20/10' }
+  ];
+
   return (
     <Element name='AboutME'>
-      <div className="introduction-container">
-        <div className='introduction'>
-            <br/><br/><br/><br/>
-            <p className="hello-">Hello,</p>
-            <h1 className="name_ro">I am <span className="intro-name">Rohan Garg</span><br/></h1><br/>
-            <h3 className="edu">I am Currently a Second Year student at <span className="col">IIT (ISM) Dhanbad</span>.</h3>
-            <h3 className="branch">I am persuing Bachelor of Technology in <span className="bran">Computer Science and Engineering</span>.</h3><br/><br/>
-            <p className="do">I am pashionate about Coding, Mathematics and Machine Learning <br/>and looking forward to make a wonderful carrier ahead in these fields.</p>
-            <br/>
+      <div className="about-section">
+        <div className="about-container">
+          {/* Left Content */}
+          <div className="about-content">
+            <div className="greeting-wrapper">
+              <span className="greeting">Hello, I'm</span>
+              <h1 className="hero-name">Rohan Garg</h1>
+              <h2 className="hero-title">Full Stack Developer | ML Enthusiast</h2>
+            </div>
+
+            {/* Education Info */}
+            <div className="edu-section">
+              <div className="edu-item">
+                <span className="edu-icon">🎓</span>
+                <div className="edu-text">
+                  <p className="edu-degree">Bachelor of Technology</p>
+                  <p className="edu-field">Computer Science and Engineering</p>
+                  <p className="edu-college">IIT (ISM) Dhanbad</p>
+                </div>
+              </div>
+            </div>
+
+            {/* About Description */}
+            <p className="about-description">
+              I craft innovative, scalable solutions that transform ideas into impactful digital experiences. With deep expertise in full-stack development, competitive programming, and machine learning, I specialize in building real-time collaborative systems using React, Node.js, and cutting-edge technologies. My approach combines strong algorithmic thinking with elegant code architecture, ensuring solutions that are both powerful and user-centric.
+            </p>
+
+            {/* Contact & Stats */}
+            <div className="about-footer">
+              <a href="mailto:rohangarg1444@gmail.com" className="contact-link">
+                📧 rohangarg1444@gmail.com
+              </a>
+            </div>
+          </div>
+
+          {/* Right Image Section */}
+          <div className="about-image-wrapper">
+            <div className="image-frame">
+              <div className="frame-decoration"></div>
+              <img src={Rohan} alt="Rohan Garg" className="about-image"/>
+            </div>
+            
+            {/* Stats Cards */}
+            <div className="stats-grid">
+              {stats.map((stat, idx) => (
+                <div key={idx} className="stat-card">
+                  <p className="stat-value">{stat.value}</p>
+                  <p className="stat-label">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <img src={Rohan} alt="Rohan_Garg" className="Rohan_image"/>
       </div>
     </Element>
   )

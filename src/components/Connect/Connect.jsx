@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './Connect.css'
 import insta from '../../assets/insta.jpeg'
 import linkedin from '../../assets/linkedin.png'
@@ -8,21 +8,31 @@ import emailjs from '@emailjs/browser';
 
 const Connect = () => {
     const form = useRef();
+    const [alert, setAlert] = useState({ show: false, message: '', type: '' });
+
+    useEffect(() => {
+        emailjs.init('jK17NLdpNM50XbRQx');
+    }, []);
+
+    const showAlert = (message, type) => {
+        setAlert({ show: true, message, type });
+        setTimeout(() => setAlert({ show: false, message: '', type: '' }), 4000);
+    };
+
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_v4wmpi9', 'template_d08bb88', form.current, {
-            publicKey: 'jK17NLdpNM50XbRQx',
-            })
+            .sendForm('service_v4wmpi9', 'template_d08bb88', form.current, 'jK17NLdpNM50XbRQx')
             .then(
-            () => {
-                console.log('SUCCESS!');
-                e.target.reset();
-                alert('Email Sent!');
+            (response) => {
+                console.log('SUCCESS!', response);
+                form.current.reset();
+                showAlert('✨ Message sent successfully! I\'ll get back to you soon.', 'success');
             },
             (error) => {
-                console.log('FAILED...', error.text);
+                console.log('FAILED...', error);
+                showAlert('❌ Failed to send email. Please try again or contact me directly.', 'error');
             },
             );
         };
@@ -31,25 +41,66 @@ const Connect = () => {
   return (
     <Element name='Connect'>
     <div className='main-connect'>
-        <h1 className="contact">Contact Me</h1>
-        <p className="desc-cont">Please fill out the form below to contact me</p>
-        <form className="connect-form" ref={form} onSubmit={sendEmail}>
-            <input type="text" className="name" placeholder='Your Name' name='your_name'/>
-            <input type="email" className="email" placeholder='Your Email Id' name='your_email'/>
-            <textarea name="message" className="msg" placeholder='Your Message' rows={5}></textarea>
-            <button className="submit" type='submit' value="send">Submit</button>
-        </form>
-        <div className="images-contact">
-            <a href="https://www.linkedin.com/in/rohan-garg-1446-/" className="linked" target='_blank'>
-                <img src={linkedin} className="linkimg" alt='LinkedIn'></img>
-            </a>
-            <a href="https://www.instagram.com/rohangarg1446/" className="insta" target='_blank'>
-                <img src={insta} alt="Instagram" className="instaimg"/>
-            </a>
-            <a href="https://github.com/rohangarg-2006" className="github" target='_blank'>
-                <img src={github} alt="GitHub" className="githubimg"/>
-            </a>
+        <h1 className="contact-title">Get In Touch</h1>
+        <p className="desc-cont">Feel free to reach out to me via email or connect on social media. I'm always open to discussing new projects and opportunities.</p>
+        
+        <div className="contact-wrapper">
+            <div className="contact-info-box">
+                <h3 className="contact-heading">Contact Information</h3>
+                <div className="contact-details">
+                    <div className="contact-item">
+                        <span className="contact-icon">📧</span>
+                        <div>
+                            <p className="label">Email</p>
+                            <a href="mailto:rohangarg1444@gmail.com">rohangarg1444@gmail.com</a>
+                        </div>
+                    </div>
+                    <div className="contact-item">
+                        <span className="contact-icon"></span>
+                        <div>
+                            <p className="label">Location</p>
+                            <p>Dhanbad, Jharkhand, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="social-links">
+                    <a href="https://www.linkedin.com/in/rohan-garg-1446/" className="social-btn linkedin" target='_blank' rel="noopener noreferrer">
+                        <img src={linkedin} alt='LinkedIn'/>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/rohangarg-2006" className="social-btn github" target='_blank' rel="noopener noreferrer">
+                        <img src={github} alt="GitHub" />
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/rohangarg1446/" className="social-btn instagram" target='_blank' rel="noopener noreferrer">
+                        <img src={insta} alt="Instagram" />
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <form className="connect-form" ref={form} onSubmit={sendEmail}>
+                <h3 className="form-heading">Send Me a Message</h3>
+                <div className="form-group">
+                    <input type="text" className="form-input" placeholder='Your Name' name='your_name' required/>
+                </div>
+                <div className="form-group">
+                    <input type="email" className="form-input" placeholder='Your Email' name='your_email' required/>
+                </div>
+                <div className="form-group">
+                    <textarea name="message" className="form-textarea" placeholder='Your Message' rows={5} required></textarea>
+                </div>
+                <button className="form-submit" type='submit'>Send Message</button>
+            </form>
         </div>
+        
+        {alert.show && (
+            <div className={`custom-alert ${alert.type}`}>
+                <div className="alert-content">
+                    <p className="alert-message">{alert.message}</p>
+                </div>
+            </div>
+        )}
     </div>
     </Element>
   )

@@ -3,15 +3,77 @@ import "./Achievements.css"
 import { Element } from 'react-scroll'
 
 const Achievements = () => {
+  const achievementsData = [
+    {
+      title: "Academic Excellence",
+      items: [
+        "Class XII CBSE: 97.6%",
+        "Class X CBSE: 98.4%",
+        "Current CGPA at IIT ISM Dhanbad: 8.20/10"
+      ]
+    },
+    {
+      title: "Competitive Programming",
+      items: [
+        "CodeChef: Rating 1842 (4 star)",
+        "Codeforces: Rating 1644 (Expert)",
+        "AtCoder: Rating 712"
+      ]
+    },
+    {
+      title: "Entrance Exams",
+      items: [
+        "AIR 2559 in JEE(Advanced) 2023",
+        "AIR 4390 in JEE(Mains) 2023"
+      ]
+    },
+    {
+      title: "Hackathons & Contests",
+      items: [
+        "Top 10 at Agglomeration 1.0 Hackathon (Dept. of CSE, IIT ISM Dhanbad)",
+        "1st Place in Agglomeration 1.0 Hackathon - Best Problem Statement Solution",
+        "Top 10 in Code Conquest among 100+ teams (Coding event organized by CSE dept)",
+        "Top 20 out of 400+ in Competitive Coding Club (C3) Recruitment, IIT(ISM) Dhanbad"
+      ]
+    },
+    {
+      title: "Certifications & Recognition",
+      items: [
+        "Google Student Upskilling Program - Certificate",
+        "Salesforce Futureforce Tech Accelerator Event - Spot earned",
+        "AIR 2559 | JEE Advanced 2023"
+      ]
+    },
+    {
+      title: "Social Engagement",
+      items: [
+        "Event Coordinator at Udbhav - Annual Flagship Event (IIT ISM Dhanbad)",
+        "Club Member at Competitive Coding Club(C3) - IIT Dhanbad",
+        "Technical Head and Jagrati Head at Fast Forward India - Facilitating learning for underprivileged children",
+        "Content Writer at Buffered Reader - Biannual Magazine of CSE Department"
+      ]
+    }
+  ];
+
   return (
     <Element name='Achievements'>
     <div className='main-achieve'>
-        <h1 className="ach">Achievements</h1><br/>
-        <div className="list-ach">
-            <div className="ten">I got 98.4% marks in CBSE Class 10th Board Examination. </div>
-            <div className="twe">I got 97.6% marks in CBSE Class 12th Board Examination. </div>
-            <div className="jee">I secured AIR 2559 in JEE(Advanced) 2023 and AIR 4390 in JEE(Mains) 2023.</div>
-            <div className="codecon">My team was 10th ranked in a coding event organised by CSE dept among more than 100 teams.</div>
+        <h1 className="ach-title">Achievements & Recognition</h1>
+        <p className="ach-subtitle">Highlights of my academic and professional accomplishments</p>
+        <div className="achievements-container">
+          {achievementsData.map((achievement, index) => (
+            <div key={index} className="achievement-card">
+              <h3 className="achievement-category">{achievement.title}</h3>
+              <ul className="achievement-items">
+                {achievement.items.map((item, idx) => (
+                  <li key={idx} className="achievement-item">
+                    <span className="achievement-bullet">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
     </div>
     </Element>
