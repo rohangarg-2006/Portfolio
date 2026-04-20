@@ -149,6 +149,17 @@
     box-shadow: 0 8px 24px rgba(97, 218, 251, 0.4);
 }
 
+.download-link {
+    background: linear-gradient(135deg, #ffd700, #ff6b6b);
+    border: 2px solid #ffd700;
+    transition: all 0.3s ease;
+}
+
+.download-link:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ffd700);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+}
+
 /* Image Section */
 .about-image-wrapper {
     display: flex;

@@ -40,6 +40,7 @@ const Projects = () => {
       description: "A responsive, modern portfolio website built with React and Vite. Features smooth scrolling navigation, glassmorphic design system, interactive project showcase, achievements gallery, and contact form. Includes comprehensive sections for skills, projects, competitive programming ratings, and professional achievements with elegant animations and hover effects.",
       tech: ["React 18.2", "Vite", "JavaScript", "CSS3", "React-Scroll", "EmailJS"],
       github: "https://github.com/rohangarg-2006/Portfolio",
+      demo: "https://portfolio-mrm0.onrender.com/",
       featured: true
     },
     {

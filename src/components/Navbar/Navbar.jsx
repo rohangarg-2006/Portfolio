@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-scroll';
+import Resume from '../../assets/Rohan Garg Resume.pdf'
 // import R_img from '../../assets/R.png'
 import "./Navbar.css"
 
@@ -27,6 +28,9 @@ const nav_bar = () => {
                 <Link activeClass='active' to='Connect' spy={true} smooth={true} offset={-120} duration={500} className="shortcuts nav-link cta-button">
                     <span className="nav-icon">💬</span>Connect
                 </Link>
+                <a href={Resume} download="Rohan-Garg-Resume.pdf" className="shortcuts nav-link resume-button">
+                    <span className="nav-icon">📄</span>Resume
+                </a>
             </div>
         </div>
     </nav>

@@ -30,6 +30,7 @@ const Achievements = () => {
     {
       title: "Hackathons & Contests",
       items: [
+        "287th rank in Meta Hacker Cup 2025 among 13000+ participants",
         "Top 10 at Agglomeration 1.0 Hackathon (Dept. of CSE, IIT ISM Dhanbad)",
         "1st Place in Agglomeration 1.0 Hackathon - Best Problem Statement Solution",
         "Top 10 in Code Conquest among 100+ teams (Coding event organized by CSE dept)",
@@ -48,8 +49,8 @@ const Achievements = () => {
       title: "Social Engagement",
       items: [
         "Event Coordinator at Udbhav - Annual Flagship Event (IIT ISM Dhanbad)",
-        "Club Member at Competitive Coding Club(C3) - IIT Dhanbad",
         "Technical Head and Jagrati Head at Fast Forward India - Facilitating learning for underprivileged children",
+        "Club Member at Competitive Coding Club(C3) - IIT Dhanbad",
         "Content Writer at Buffered Reader - Biannual Magazine of CSE Department"
       ]
     }

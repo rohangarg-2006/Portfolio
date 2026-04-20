@@ -1,12 +1,13 @@
 import React from 'react'
 import Rohan from '../../assets/Rohan.jpg'
+import Resume from '../../assets/Rohan Garg Resume.pdf'
 import './About.css'
 import { Element } from 'react-scroll'
 
 const About = () => {
   const stats = [
-    { label: 'Projects', value: '7+' },
-    { label: 'Experience', value: '2+ yrs' },
+    { label: 'Projects', value: '8+' },
+    { label: 'Experience', value: '3+ yrs' },
     { label: 'CGPA', value: '8.20/10' }
   ];
 
@@ -43,6 +44,9 @@ const About = () => {
             <div className="about-footer">
               <a href="mailto:rohangarg1444@gmail.com" className="contact-link">
                 📧 rohangarg1444@gmail.com
+              </a>
+              <a href={Resume} download="Rohan-Garg-Resume.pdf" className="contact-link download-link">
+                📥 Download Resume
               </a>
             </div>
           </div>
