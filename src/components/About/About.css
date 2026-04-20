@@ -2,10 +2,10 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 30px 60px 30px;
+    padding: 80px 30px 60px 30px;
     background: linear-gradient(135deg, rgba(15, 15, 18, 0.8), rgba(22, 33, 62, 0.8));
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .about-container {
@@ -328,31 +328,64 @@
 
 @media (max-width: 600px) {
     .about-section {
-        padding: 30px 15px;
+        padding: 120px 15px 40px 15px;
+        min-height: auto;
+        margin-top: 30;
+    }
+
+    .about-container {
+        gap: 2.5rem;
     }
 
     .hero-name {
         font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-title {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .greeting {
         font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.2rem 1rem;
     }
 
     .edu-section {
         padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
     }
 
     .contact-link {
         width: 100%;
         text-align: center;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .image-frame {
+        max-width: 100%;
     }
 }

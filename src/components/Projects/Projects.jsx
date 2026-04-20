@@ -78,7 +78,7 @@ const Projects = () => {
   return (
     <Element name='Projects'>
     <div className='projects-main'>
-        <h1 className="projects-title">Projects & Portfolio</h1>
+        <h1 className="projects-title">Projects</h1>
         <p className="projects-subtitle">Featured projects and hackathon submissions showcasing full-stack development and machine learning expertise</p>
         
         <div className="projects-grid">

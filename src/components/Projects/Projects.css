@@ -1,7 +1,7 @@
 .projects-main {
     max-width: 1200px;
-    margin: 20px auto 0 auto;
-    padding: 100px 30px 40px 30px;
+    margin: 0 auto;
+    padding: 80px 30px 40px 30px;
 }
 
 .projects-title {
@@ -294,18 +294,67 @@
 }
 
 @media (max-width: 600px) {
+    .projects-main {
+        padding: 70px 15px 30px 15px;
+        margin: 0 auto;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .projects-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .project-title-name {
+        font-size: 1.1rem;
+    }
+
+    .project-type {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .project-link {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
     .competitive-section {
-        padding: 3rem 0;
-        margin-top: 3rem;
+        padding: 2rem 0;
+        margin-top: 2rem;
     }
 
     .comp-title {
         font-size: 1.8rem;
+        margin-bottom: 0.5rem;
     }
 
     .comp-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .platforms {

@@ -1,7 +1,7 @@
 .main-achieve {
     max-width: 1200px;
-    margin: 20px auto 0 auto;
-    padding: 100px 30px 40px 30px;
+    margin: 0 auto;
+    padding: 80px 30px 40px 30px;
 }
 
 .ach-title {
@@ -101,5 +101,45 @@
 
     .achievement-item {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-achieve {
+        padding: 70px 15px 30px 15px;
+        margin: 0 auto;
+    }
+
+    .ach-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .ach-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .achievements-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .achievement-card {
+        padding: 1.2rem;
+    }
+
+    .achievement-category {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .achievement-item {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .achievement-bullet {
+        font-size: 1rem;
     }
 }

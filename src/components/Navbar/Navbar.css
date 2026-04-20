@@ -231,7 +231,9 @@
 
 @media (max-width: 650px) {
     .navbar-container {
-        padding: 10px 15px;
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .brand-name {
@@ -246,11 +248,13 @@
 
     .links {
         gap: 4px;
+        width: 100%;
     }
 
     .shortcuts {
         padding: 8px 10px;
         font-size: 0.8rem;
+        flex: 1;
     }
 
     .shortcuts .nav-icon {
@@ -258,6 +262,10 @@
     }
 
     .cta-button {
+        display: none;
+    }
+
+    .resume-button {
         display: none;
     }
 }
