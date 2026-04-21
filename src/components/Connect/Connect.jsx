@@ -61,10 +61,10 @@ const Connect = () => {
                         </div>
                     </div>
                     <div className="contact-item">
-                        <span className="contact-icon"></span>
+                        <span className="contact-icon">📍</span>
                         <div>
                             <p className="label">Location</p>
-                            <p>Dhanbad, Jharkhand, India</p>
+                            <p>Delhi, India</p>
                         </div>
                     </div>
                 </div>

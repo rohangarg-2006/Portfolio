@@ -49,7 +49,7 @@ const Achievements = () => {
       title: "Social Engagement",
       items: [
         "Event Coordinator at Udbhav - Annual Flagship Event (IIT ISM Dhanbad)",
-        "Technical Head and Jagrati Head at Fast Forward India - Facilitating learning for underprivileged children",
+        "Technical Head and Jagrati Coordinator at Fast Forward India - Facilitating learning for underprivileged children",
         "Club Member at Competitive Coding Club(C3) - IIT Dhanbad",
         "Content Writer at Buffered Reader - Biannual Magazine of CSE Department"
       ]

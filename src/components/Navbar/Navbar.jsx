@@ -19,6 +19,9 @@ const nav_bar = () => {
                 <Link activeClass='active' to='Skills' spy={true} smooth={true} offset={-100} duration={500} className="shortcuts nav-link">
                     <span className="nav-icon">⚡</span>Skills
                 </Link>
+                <Link activeClass='active' to='experience' spy={true} smooth={true} offset={-100} duration={500} className="shortcuts nav-link">
+                    <span className="nav-icon">💼</span>Experience
+                </Link>
                 <Link activeClass='active' to='Projects' spy={true} smooth={true} offset={-120} duration={500} className="shortcuts nav-link">
                     <span className="nav-icon">🚀</span>Projects
                 </Link>
