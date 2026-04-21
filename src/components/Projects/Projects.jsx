@@ -4,6 +4,23 @@ import { Element } from 'react-scroll'
 import codeforces from "../../assets/codeforces.png"
 import codechef from "../../assets/codechef.jpeg"
 import atcoder from "../../assets/atcoder.png"
+import leetcode from "../../assets/leetcode-logo.png"
+
+const getTechCategory = (tech) => {
+  const categories = {
+    Frontend: ["React", "React 18.2", "Vue", "Angular", "Vite", "CSS3", "HTML"],
+    Backend: ["Node.js", "Express", "Express.js", "Django", "FastAPI"],
+    Database: ["MongoDB", "PostgreSQL", "MySQL"],
+    Tools: ["Socket.io", "Monaco Editor", "EJS", "React-Scroll", "EmailJS", "Tailwind CSS", "JWT"],
+    AI_ML: ["PyTorch", "TensorFlow", "Google Gemini API", "NumPy", "Pandas"],
+    DataVis: ["Matplotlib", "Jupyter", "Real-time Updates"]
+  };
+
+  for (const [cat, techs] of Object.entries(categories)) {
+    if (techs.includes(tech)) return cat;
+  }
+  return "Other";
+};
 
 const Projects = () => {
   const projectsData = [
@@ -48,23 +65,22 @@ const Projects = () => {
       type: "ML Implementation from Scratch",
       description: "Comprehensive implementation of core ML algorithms from scratch using only NumPy, Pandas, and Matplotlib. Includes Linear/Polynomial/Logistic Regression, Artificial Neural Networks, K-NN, and K-Means Clustering with detailed analysis.",
       tech: ["Python", "NumPy", "Pandas", "Matplotlib", "Jupyter"],
-      github: "https://github.com/rohangarg-2006/Machine-Learning"
+      github: "https://github.com/rohangarg-2006/Machine-Learning",
+      featured: true
     },
     {
       title: "Go Flow Mail",
       type: "AI-Powered Email & Chat Application",
       description: "Full-stack email client with integrated AI chatbot powered by Google Gemini. Features folder-based email organization (Inbox, Sent, Drafts, Spam), secure JWT authentication, and real-time AI assistance with user context management.",
       tech: ["React", "Node.js", "Express.js", "Google Gemini API", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com/rohangarg-2006/HackFest",
-      featured: true
+      github: "https://github.com/rohangarg-2006/HackFest"
     },
     {
       title: "Campus Virtual Bus",
       type: "Real-time Ride-Sharing Platform",
       description: "A full-stack campus ride-sharing application enabling students to request and offer rides in real-time. Features include role-based access (passenger/driver), real-time notifications via Socket.io, and dynamic seat management across 31+ campus locations.",
       tech: ["React 18.2", "Node.js", "Express.js", "Socket.io", "Vite", "Tailwind CSS"],
-      github: "https://github.com/rohangarg-2006/SE-Project",
-      featured: true
+      github: "https://github.com/rohangarg-2006/SE-Project"
     },
     {
       title: "CNN Models on MNIST & Fashion MNIST",
@@ -77,33 +93,49 @@ const Projects = () => {
 
   return (
     <Element name='Projects'>
-    <div className='projects-main'>
+      <div className='projects-main'>
         <h1 className="projects-title">Projects</h1>
         <p className="projects-subtitle">Featured projects and hackathon submissions showcasing full-stack development and machine learning expertise</p>
         
         <div className="projects-grid">
           {projectsData.map((project, index) => (
-            <div key={index} className={`project-card ${project.featured ? 'featured' : ''}`}>
-              {project.award && <div className="award-badge">{project.award}</div>}
+            <div key={index} className={`project-card ${project.featured ? 'featured' : ''} ${project.award ? 'has-award' : ''}`}>
+              {project.award && (
+                <div className="award-container">
+                  <div className="featured-star">★</div>
+                  <div className="award-badge">{project.award}</div>
+                </div>
+              )}
+              
               <div className="project-header">
                 <h3 className="project-title-name">{project.title}</h3>
                 <p className="project-type">{project.type}</p>
               </div>
+              
               <p className="project-description">{project.description}</p>
+              
               <div className="tech-stack">
-                {project.tech.map((tech, idx) => (
-                  <span key={idx} className="tech-tag">{tech}</span>
-                ))}
+                {project.tech.map((tech, idx) => {
+                  const category = getTechCategory(tech);
+                  return (
+                    <span key={idx} className={`tech-tag tech-${category.toLowerCase().replace('_', '-')}`} title={category}>
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
+              
               <div className="project-links">
                 {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link github-link">
-                    GitHub →
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link github-link" title="View on GitHub">
+                    <span className="link-icon">🔗</span>
+                    <span className="link-text">GitHub</span>
                   </a>
                 )}
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link demo-link">
-                    Live Demo →
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link demo-link" title="View Live Demo">
+                    <span className="link-icon">🌐</span>
+                    <span className="link-text">Live Demo</span>
                   </a>
                 )}
               </div>
@@ -127,6 +159,12 @@ const Projects = () => {
               </a>
               <p className="codectext">CodeChef<br/><span className="rating">Rating: 1842 (4 star)</span></p>
             </div>
+            <div className="leetcode-link">
+              <a href="https://leetcode.com/u/Rohan-Garg/" className="leetcode" target='_blank' rel="noopener noreferrer">
+                <img src={leetcode} alt="LeetCode" />
+              </a>
+              <p className="leetcodetext">LeetCode<br/><span className="rating">Active Solver</span></p>
+            </div>
             <div className="atcoder-link">
               <a href="https://atcoder.jp/users/Rohan_Garg" className="atcoder" target='_blank' rel="noopener noreferrer">
                 <img src={atcoder} alt="AtCoder" />
@@ -135,7 +173,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </Element>
   )
 }
