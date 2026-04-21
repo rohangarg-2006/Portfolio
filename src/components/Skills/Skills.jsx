@@ -11,7 +11,7 @@ const Skills = () => {
     {
       category: "Languages",
       skills: ["C++", "C", "Python", "HTML", "CSS", "JavaScript"],
-      desc: "Proficient in multiple programming languages with expertise in competitive programming (CodeChef: 1642 Expert, Codeforces: 1366, Atcoder: 712)"
+      desc: "Proficient in multiple programming languages with expertise in competitive programming (Codeforces 1644 - Expert, CodeChef 1842 - 4 Star)"
     },
     {
       category: "Frontend Technologies",
@@ -64,7 +64,7 @@ const Skills = () => {
             <div className="cpp">
                 <img src={cpp} alt="C++" />
                 <h4>Competitive Programming</h4>
-                <p>Expert in competitive programming with strong ratings across multiple platforms: CodeChef (1642 - Expert), Codeforces (1366), and Atcoder (712).</p>
+                <p>Expert in competitive programming with strong ratings across multiple platforms:  Codeforces (1644 - Expert), CodeChef (1842 - 4 Star) and Atcoder (712).</p>
             </div>
             <div className="python">
                 <img src={python} alt="PYTHON" />
