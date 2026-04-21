@@ -69,7 +69,7 @@ const Connect = () => {
                     </div>
                 </div>
                 <div className="social-links">
-                    <a href="https://www.linkedin.com/in/rohan-garg-1446/" className="social-btn linkedin" target='_blank' rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/rohan-garg-1446-/" className="social-btn linkedin" target='_blank' rel="noopener noreferrer">
                         <img src={linkedin} alt='LinkedIn'/>
                         <span>LinkedIn</span>
                     </a>
